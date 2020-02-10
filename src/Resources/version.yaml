@@ -7,7 +7,7 @@ module:
     type: Core
     active: 'Y'
     category: Learn
-    version: v0.0.00
+    version: 0.0.00
     author: 'Craig Rayner'
     url: 'http://www.craigrayner.com'
     actions:

@@ -1,0 +1,400 @@
+version: 0.0.00
+name: Activities
+module:
+    name: Activities
+    description: 'Run a school activities program'
+    entryURL: activities_view.php
+    type: Core
+    active: 'Y'
+    category: Learn
+    version: v0.0.00
+    author: 'Craig Rayner'
+    url: 'http://www.craigrayner.com'
+    actions:
+        'View Activities_view':
+            name: 'View Activities_view'
+            precedence: 0
+            category: Activities
+            description: 'Allows users to view activities'
+            URLList: 'activities_view.php, activities_view_full.php'
+            entryURL: activities_view.php
+            entrySidebar: 'Y'
+            menuShow: 'Y'
+            defaultPermissionAdmin: 'Y'
+            defaultPermissionTeacher: 'Y'
+            defaultPermissionStudent: 'Y'
+            defaultPermissionParent: 'Y'
+            defaultPermissionSupport: 'Y'
+            categoryPermissionStaff: 'Y'
+            categoryPermissionStudent: 'Y'
+            categoryPermissionParent: 'Y'
+            categoryPermissionOther: 'Y'
+            permissions:
+                - Administrator
+                - Parent
+                - 'Support Staff'
+                - Teacher
+                - Librarian
+        'View Activities_studentRegister':
+            name: 'View Activities_studentRegister'
+            precedence: 1
+            category: Activities
+            description: 'Allows students to view activities and register'
+            URLList: 'activities_view.php, activities_view_full.php, activities_view_register.php'
+            entryURL: activities_view.php
+            entrySidebar: 'Y'
+            menuShow: 'Y'
+            defaultPermissionAdmin: 'N'
+            defaultPermissionTeacher: 'N'
+            defaultPermissionStudent: 'Y'
+            defaultPermissionParent: 'N'
+            defaultPermissionSupport: 'N'
+            categoryPermissionStaff: 'N'
+            categoryPermissionStudent: 'Y'
+            categoryPermissionParent: 'N'
+            categoryPermissionOther: 'N'
+            permissions:
+                - Student
+        'Manage Activities':
+            name: 'Manage Activities'
+            precedence: 0
+            category: Administration
+            description: 'Allows managers to build activity program'
+            URLList: 'activities_manage.php, activities_manage_add.php, activities_manage_edit.php, activities_manage_delete.php,activities_manage_enrolment.php,activities_manage_enrolment_add.php,activities_manage_enrolment_edit.php,activities_manage_enrolment_delete.php'
+            entryURL: activities_manage.php
+            entrySidebar: 'Y'
+            menuShow: 'Y'
+            defaultPermissionAdmin: 'Y'
+            defaultPermissionTeacher: 'N'
+            defaultPermissionStudent: 'N'
+            defaultPermissionParent: 'N'
+            defaultPermissionSupport: 'N'
+            categoryPermissionStaff: 'Y'
+            categoryPermissionStudent: 'N'
+            categoryPermissionParent: 'N'
+            categoryPermissionOther: 'N'
+            permissions:
+                - Administrator
+        'My Activities':
+            name: 'My Activities'
+            precedence: 0
+            category: Activities
+            description: 'Allows a user to view the activities they are involved in'
+            URLList: 'activities_my.php, activities_my_full.php'
+            entryURL: activities_my.php
+            entrySidebar: 'Y'
+            menuShow: 'Y'
+            defaultPermissionAdmin: 'Y'
+            defaultPermissionTeacher: 'Y'
+            defaultPermissionStudent: 'Y'
+            defaultPermissionParent: 'N'
+            defaultPermissionSupport: 'N'
+            categoryPermissionStaff: 'Y'
+            categoryPermissionStudent: 'Y'
+            categoryPermissionParent: 'Y'
+            categoryPermissionOther: 'Y'
+            permissions:
+                - Administrator
+                - Student
+                - Teacher
+        'Participants by Activity':
+            name: 'Participants by Activity'
+            precedence: 0
+            category: Reports
+            description: 'Print participant lists'
+            URLList: 'report_participants.php, report_participants_print.php'
+            entryURL: report_participants.php
+            entrySidebar: 'Y'
+            menuShow: 'Y'
+            defaultPermissionAdmin: 'Y'
+            defaultPermissionTeacher: 'Y'
+            defaultPermissionStudent: 'N'
+            defaultPermissionParent: 'N'
+            defaultPermissionSupport: 'Y'
+            categoryPermissionStaff: 'Y'
+            categoryPermissionStudent: 'Y'
+            categoryPermissionParent: 'Y'
+            categoryPermissionOther: 'Y'
+            permissions:
+                - Administrator
+                - 'Support Staff'
+                - Teacher
+                - Librarian
+        'Attendance History by Activity':
+            name: 'Attendance History by Activity'
+            precedence: 0
+            category: Attendance
+            description: 'Print attendance lists'
+            URLList: 'report_attendance.php, report_attendanceExport.php'
+            entryURL: report_attendance.php
+            entrySidebar: 'Y'
+            menuShow: 'Y'
+            defaultPermissionAdmin: 'Y'
+            defaultPermissionTeacher: 'Y'
+            defaultPermissionStudent: 'N'
+            defaultPermissionParent: 'N'
+            defaultPermissionSupport: 'Y'
+            categoryPermissionStaff: 'Y'
+            categoryPermissionStudent: 'Y'
+            categoryPermissionParent: 'Y'
+            categoryPermissionOther: 'Y'
+            permissions:
+                - Administrator
+                - 'Support Staff'
+                - Teacher
+                - Librarian
+        'Generate Invoices':
+            name: 'Generate Invoices'
+            precedence: 0
+            category: Administration
+            description: 'Print payment list'
+            URLList: activities_payment.php
+            entryURL: activities_payment.php
+            entrySidebar: 'Y'
+            menuShow: 'Y'
+            defaultPermissionAdmin: 'Y'
+            defaultPermissionTeacher: 'Y'
+            defaultPermissionStudent: 'N'
+            defaultPermissionParent: 'N'
+            defaultPermissionSupport: 'Y'
+            categoryPermissionStaff: 'Y'
+            categoryPermissionStudent: 'Y'
+            categoryPermissionParent: 'Y'
+            categoryPermissionOther: 'Y'
+            permissions:
+                - Administrator
+                - 'Support Staff'
+                - Librarian
+        'Activity Type by Roll Group':
+            name: 'Activity Type by Roll Group'
+            precedence: 0
+            category: Reports
+            description: 'Print roll group lists showing count of various activity types'
+            URLList: report_activityType_rollGroup.php
+            entryURL: report_activityType_rollGroup.php
+            entrySidebar: 'Y'
+            menuShow: 'Y'
+            defaultPermissionAdmin: 'Y'
+            defaultPermissionTeacher: 'Y'
+            defaultPermissionStudent: 'N'
+            defaultPermissionParent: 'N'
+            defaultPermissionSupport: 'Y'
+            categoryPermissionStaff: 'Y'
+            categoryPermissionStudent: 'N'
+            categoryPermissionParent: 'N'
+            categoryPermissionOther: 'N'
+            permissions:
+                - Administrator
+                - 'Support Staff'
+                - Teacher
+                - Librarian
+        'Activity Spread by Roll Group':
+            name: 'Activity Spread by Roll Group'
+            precedence: 0
+            category: Reports
+            description: 'View spread of enrolment over terms and days by roll group'
+            URLList: report_activitySpread_rollGroup.php
+            entryURL: report_activitySpread_rollGroup.php
+            entrySidebar: 'Y'
+            menuShow: 'Y'
+            defaultPermissionAdmin: 'Y'
+            defaultPermissionTeacher: 'Y'
+            defaultPermissionStudent: 'N'
+            defaultPermissionParent: 'N'
+            defaultPermissionSupport: 'N'
+            categoryPermissionStaff: 'Y'
+            categoryPermissionStudent: 'N'
+            categoryPermissionParent: 'N'
+            categoryPermissionOther: 'N'
+            permissions:
+                - Administrator
+                - 'Support Staff'
+                - Teacher
+                - Librarian
+        'Activity Choices by Student':
+            name: 'Activity Choices by Student'
+            precedence: 1
+            category: Reports
+            description: 'View all student activity choices in the current year for a given student'
+            URLList: report_activityChoices_byStudent.php
+            entryURL: report_activityChoices_byStudent.php
+            entrySidebar: 'Y'
+            menuShow: 'Y'
+            defaultPermissionAdmin: 'Y'
+            defaultPermissionTeacher: 'Y'
+            defaultPermissionStudent: 'N'
+            defaultPermissionParent: 'N'
+            defaultPermissionSupport: 'N'
+            categoryPermissionStaff: 'Y'
+            categoryPermissionStudent: 'N'
+            categoryPermissionParent: 'N'
+            categoryPermissionOther: 'N'
+            permissions:
+                - Administrator
+                - 'Support Staff'
+                - Teacher
+                - Librarian
+        'Activity Enrolment Summary':
+            name: 'Activity Enrolment Summary'
+            precedence: 0
+            category: Reports
+            description: 'View summary enrolment information for all activities in the current year.'
+            URLList: report_activityEnrollmentSummary.php
+            entryURL: report_activityEnrollmentSummary.php
+            entrySidebar: 'Y'
+            menuShow: 'Y'
+            defaultPermissionAdmin: 'Y'
+            defaultPermissionTeacher: 'Y'
+            defaultPermissionStudent: 'N'
+            defaultPermissionParent: 'N'
+            defaultPermissionSupport: 'N'
+            categoryPermissionStaff: 'Y'
+            categoryPermissionStudent: 'N'
+            categoryPermissionParent: 'N'
+            categoryPermissionOther: 'N'
+            permissions:
+                - Administrator
+                - Teacher
+        'View Activities_studentRegisterByParent':
+            name: 'View Activities_studentRegisterByParent'
+            precedence: 2
+            category: Activities
+            description: 'Allows parents to register their children for activities'
+            URLList: 'activities_view.php, activities_view_full.php, activities_view_register.php'
+            entryURL: activities_view.php
+            entrySidebar: 'Y'
+            menuShow: 'Y'
+            defaultPermissionAdmin: 'N'
+            defaultPermissionTeacher: 'N'
+            defaultPermissionStudent: 'N'
+            defaultPermissionParent: 'Y'
+            defaultPermissionSupport: 'N'
+            categoryPermissionStaff: 'N'
+            categoryPermissionStudent: 'N'
+            categoryPermissionParent: 'Y'
+            categoryPermissionOther: 'N'
+        'Enter Activity Attendance':
+            name: 'Enter Activity Attendance'
+            precedence: 1
+            category: Attendance
+            description: 'Record student attendance for activities.'
+            URLList: 'activities_attendance.php,activities_attendanceProcess.php'
+            entryURL: activities_attendance.php
+            entrySidebar: 'Y'
+            menuShow: 'Y'
+            defaultPermissionAdmin: 'Y'
+            defaultPermissionTeacher: 'Y'
+            defaultPermissionStudent: 'N'
+            defaultPermissionParent: 'N'
+            defaultPermissionSupport: 'N'
+            categoryPermissionStaff: 'Y'
+            categoryPermissionStudent: 'N'
+            categoryPermissionParent: 'N'
+            categoryPermissionOther: 'N'
+            permissions:
+                - Administrator
+                - Teacher
+        'Printable Attendance Sheet':
+            name: 'Printable Attendance Sheet'
+            precedence: 1
+            category: Attendance
+            description: 'Generate a printable attendance sheet for activities.'
+            URLList: 'activities_attendance_sheet.php,activities_attendance_sheetPrint.php'
+            entryURL: activities_attendance_sheet.php
+            entrySidebar: 'Y'
+            menuShow: 'Y'
+            defaultPermissionAdmin: 'Y'
+            defaultPermissionTeacher: 'Y'
+            defaultPermissionStudent: 'N'
+            defaultPermissionParent: 'N'
+            defaultPermissionSupport: 'N'
+            categoryPermissionStaff: 'Y'
+            categoryPermissionStudent: 'N'
+            categoryPermissionParent: 'N'
+            categoryPermissionOther: 'N'
+            permissions:
+                - Administrator
+                - Teacher
+        'My Activities_viewEditEnrolment':
+            name: 'My Activities_viewEditEnrolment'
+            precedence: 0
+            category: Activities
+            description: 'Allows an activity organizer to manage enrolment for their activities.'
+            URLList: 'activities_my.php,activities_my_full.php,activities_manage_enrolment.php,activities_manage_enrolment_add.php,activities_manage_enrolment_edit.php,activities_manage_enrolment_delete.php'
+            entryURL: activities_my.php
+            entrySidebar: 'Y'
+            menuShow: 'Y'
+            defaultPermissionAdmin: 'Y'
+            defaultPermissionTeacher: 'N'
+            defaultPermissionStudent: 'N'
+            defaultPermissionParent: 'N'
+            defaultPermissionSupport: 'N'
+            categoryPermissionStaff: 'Y'
+            categoryPermissionStudent: 'N'
+            categoryPermissionParent: 'N'
+            categoryPermissionOther: 'N'
+            permissions:
+                - Administrator
+        'Enter Activity Attendance_leader':
+            name: 'Enter Activity Attendance_leader'
+            precedence: 0
+            category: Attendance
+            description: 'Record student attendance for activities you organise, coach or assist in.'
+            URLList: 'activities_attendance.php,activities_attendanceProcess.php'
+            entryURL: activities_attendance.php
+            entrySidebar: 'Y'
+            menuShow: 'Y'
+            defaultPermissionAdmin: 'Y'
+            defaultPermissionTeacher: 'Y'
+            defaultPermissionStudent: 'N'
+            defaultPermissionParent: 'N'
+            defaultPermissionSupport: 'N'
+            categoryPermissionStaff: 'Y'
+            categoryPermissionStudent: 'Y'
+            categoryPermissionParent: 'N'
+            categoryPermissionOther: 'N'
+            permissions:
+                - Administrator
+                - Teacher
+        'Activity Attendance by Date':
+            name: 'Activity Attendance by Date'
+            precedence: 0
+            category: Reports
+            description: 'Record student attendance for activities.'
+            URLList: 'report_attendance_byDate.php,report_attendance_byDate_print.php'
+            entryURL: report_attendance_byDate.php
+            entrySidebar: 'Y'
+            menuShow: 'Y'
+            defaultPermissionAdmin: 'Y'
+            defaultPermissionTeacher: 'Y'
+            defaultPermissionStudent: 'N'
+            defaultPermissionParent: 'N'
+            defaultPermissionSupport: 'N'
+            categoryPermissionStaff: 'Y'
+            categoryPermissionStudent: 'N'
+            categoryPermissionParent: 'N'
+            categoryPermissionOther: 'N'
+            permissions:
+                - Administrator
+                - Teacher
+        'Activity Choices by Roll Group':
+            name: 'Activity Choices by Roll Group'
+            precedence: 0
+            category: Reports
+            description: 'View all student activity choices in the current year for a given roll group.'
+            URLList: report_activityChoices_byRollGroup.php
+            entryURL: report_activityChoices_byRollGroup.php
+            entrySidebar: 'Y'
+            menuShow: 'Y'
+            defaultPermissionAdmin: 'Y'
+            defaultPermissionTeacher: 'Y'
+            defaultPermissionStudent: 'N'
+            defaultPermissionParent: 'N'
+            defaultPermissionSupport: 'N'
+            categoryPermissionStaff: 'Y'
+            categoryPermissionStudent: 'N'
+            categoryPermissionParent: 'N'
+            categoryPermissionOther: 'N'
+            permissions:
+                - Administrator
+                - Teacher

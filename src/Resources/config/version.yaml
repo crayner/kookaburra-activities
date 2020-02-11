@@ -3,7 +3,7 @@ name: Activities
 module:
     name: Activities
     description: 'Run a school activities program'
-    entryURL: activities_view.php
+    entryURL: view
     type: Core
     active: 'Y'
     category: Learn
@@ -16,8 +16,8 @@ module:
             precedence: 0
             category: Activities
             description: 'Allows users to view activities'
-            URLList: 'activities_view.php, activities_view_full.php'
-            entryURL: activities_view.php
+            URLList: 'view, activities_view_full.php'
+            entryURL: view
             entrySidebar: 'Y'
             menuShow: 'Y'
             defaultPermissionAdmin: 'Y'
@@ -40,8 +40,8 @@ module:
             precedence: 1
             category: Activities
             description: 'Allows students to view activities and register'
-            URLList: 'activities_view.php, activities_view_full.php, activities_view_register.php'
-            entryURL: activities_view.php
+            URLList: 'view, activities_view_full.php, activities_view_register.php'
+            entryURL: view
             entrySidebar: 'Y'
             menuShow: 'Y'
             defaultPermissionAdmin: 'N'
@@ -260,8 +260,8 @@ module:
             precedence: 2
             category: Activities
             description: 'Allows parents to register their children for activities'
-            URLList: 'activities_view.php, activities_view_full.php, activities_view_register.php'
-            entryURL: activities_view.php
+            URLList: 'view, activities_view_full.php, activities_view_register.php'
+            entryURL: view
             entrySidebar: 'Y'
             menuShow: 'Y'
             defaultPermissionAdmin: 'N'

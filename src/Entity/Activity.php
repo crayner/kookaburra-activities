@@ -17,11 +17,15 @@ use App\Entity\Setting;
 use App\Manager\EntityInterface;
 use App\Manager\Traits\BooleanList;
 use App\Provider\ProviderFactory;
+use App\Util\TranslationsHelper;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\PersistentCollection;
 use Kookaburra\SchoolAdmin\Entity\AcademicYear;
+use Kookaburra\SchoolAdmin\Entity\AcademicYearTerm;
+use Kookaburra\SchoolAdmin\Entity\YearGroup;
+use Kookaburra\SchoolAdmin\Util\AcademicYearHelper;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -91,7 +95,7 @@ class Activity implements EntityInterface
     /**
      * @var string|null
      * @ORM\Column(length=255, name="activity_type")
-     * @ORM\Column(callback="getTypeList")
+     * @Assert\Choice(callback="getTypeList")
      */
     private $type;
 
@@ -169,21 +173,27 @@ class Activity implements EntityInterface
 
     /**
      * @var int
-     * @ORM\Column(type="smallint", columnDefinition="INT(3) UNSIGNED", name="maxParticipants", options={"default": "0"})
+     * @ORM\Column(type="smallint", columnDefinition="INT(3) UNSIGNED", name="max_participants", options={"default": "0"})
      */
     private $maxParticipants = 0;
 
     /**
      * @var Collection|null
-     * @ORM\OneToMany(targetEntity="Kookaburra\Activities\Entity\ActivityStaff", mappedBy="activity")
+     * @ORM\OneToMany(targetEntity="ActivityStaff", mappedBy="activity")
      */
     private $staff;
 
     /**
      * @var Collection|null
-     * @ORM\OneToMany(targetEntity="Kookaburra\Activities\Entity\ActivityStudent", mappedBy="activity")
+     * @ORM\OneToMany(targetEntity="ActivityStudent", mappedBy="activity")
      */
     private $students;
+
+    /**
+     * @var Collection|null
+     * @ORM\OneToMany(targetEntity="ActivitySlot", mappedBy="activity")
+     */
+    private $slots;
 
     /**
      * @return array
@@ -591,12 +601,103 @@ class Activity implements EntityInterface
     }
 
     /**
+     * @return Collection|null
+     */
+    public function getSlots(): ?Collection
+    {
+        if (empty($this->slots))
+            $this->slots = new ArrayCollection();
+
+        if ($this->slots instanceof PersistentCollection)
+            $this->slots->initialize();
+
+        return $this->slots;
+    }
+
+    /**
+     * Slots.
+     *
+     * @param Collection|null $slots
+     * @return Activity
+     */
+    public function setSlots(?Collection $slots): Activity
+    {
+        $this->slots = $slots;
+        return $this;
+    }
+
+    /**
      * toArray
      * @param string|null $name
      * @return array
      */
     public function toArray(?string $name = null): array
     {
-        return [];
+        return [
+            'name' => $this->getName(),
+            'id' => $this->getId(),
+            'activityType' => $this->getType(),
+            'provider' => $this->getProvider() === 'External' ? TranslationsHelper::translate('External', [], 'Activities') : ProviderFactory::create(Setting::class)->getSettingByScopeAsString('System','organisationNameShort'),
+            'terms' => $this->getAcademicYearTermListNames(),
+            'days' => $this->getDaysOfWeek(),
+            'years' => $this->getYears(),
+            'cost' => $this->getPayment() ?: TranslationsHelper::translate('None', [], 'messages'),
+        ];
+    }
+
+    /**
+     * getDaysOfWeek
+     * @return string
+     */
+    private function getDaysOfWeek(): string
+    {
+        $days = [];
+        foreach($this->getSlots() as $slot)
+            $days[] = TranslationsHelper::translate($slot->getDayOfWeek()->getNameShort(), [], 'messages');
+        if (empty($days))
+            $days[] = TranslationsHelper::translate('None', [], 'messages');
+        return implode(', ', $days);
+    }
+
+    /**
+     * getYears
+     * @return string
+     */
+    private function getYears(): string
+    {
+        $result = [];
+        $years = ProviderFactory::create(YearGroup::class)->findAll();
+        foreach($this->getYearGroupList() as $id) {
+            $id = intval($id);
+            $result[] = $years[$id]->getNameShort();
+        }
+
+        if (empty($result) || count($result) === count($years))
+            $result = [TranslationsHelper::translate('All', [], 'messages')];
+
+        return implode(', ', $result);
+    }
+
+    /**
+     * @var array
+     */
+    private $terms = [];
+
+    /**
+     * getAcademicYearTermListNames
+     * @return string
+     */
+    private function getAcademicYearTermListNames(): string
+    {
+        $result = [];
+        foreach($this->getAcademicYearTermList() as $id)
+        {
+            $id = intval($id);
+            if (!isset($this->terms[$id])) {
+                $this->terms[$id] = ProviderFactory::getRepository(AcademicYearTerm::class)->find($id);
+            }
+            $result[] = $this->terms[$id]->getName();
+        }
+        return implode(', ', $result);
     }
 }

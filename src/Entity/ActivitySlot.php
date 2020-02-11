@@ -12,6 +12,7 @@
  */
 namespace Kookaburra\Activities\Entity;
 
+use App\Manager\EntityInterface;
 use Doctrine\ORM\Mapping as ORM;
 use Kookaburra\SchoolAdmin\Entity\DaysOfWeek;
 use Kookaburra\SchoolAdmin\Entity\Facility;
@@ -22,12 +23,13 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @package Kookaburra\Activities\Entity
  * @ORM\Entity(repositoryClass="Kookaburra\Activities\Repository\ActivitySlotRepository")
  * @ORM\Table(options={"auto_increment": 1}, name="ActivitySlot",
- *     indexes={@ORM\Index(name="facility",columns={"facility"}),
+ *     indexes={
+ *     @ORM\Index(name="facility", columns={"facility"}),
  *     @ORM\Index(name="activity", columns={"activity"}),
- *     @ORM\Index(name="dayOfWeek", columns("day_of_week"))}
+ *     @ORM\Index(name="dayOfWeek", columns={"day_of_week"})}
  * )
  */
-class ActivitySlot
+class ActivitySlot implements EntityInterface
 {
     /**
      * @var integer|null
@@ -39,7 +41,7 @@ class ActivitySlot
 
     /**
      * @var Activity|null
-     * @ORM\ManyToOne(targetEntity="Activity")
+     * @ORM\ManyToOne(targetEntity="Activity", inversedBy="slots")
      * @ORM\JoinColumn(name="activity",referencedColumnName="id", nullable=false)
      * @Assert\NotBlank()
      */
@@ -63,6 +65,7 @@ class ActivitySlot
      * @var DaysOfWeek|null
      * @ORM\ManyToOne(targetEntity="Kookaburra\SchoolAdmin\Entity\DaysOfWeek")
      * @ORM\JoinColumn(name="day_of_week",referencedColumnName="id", nullable=false)
+     * @Assert\NotBlank()
      */
     private $dayOfWeek;
 
@@ -208,5 +211,15 @@ class ActivitySlot
     {
         $this->timeEnd = $timeEnd;
         return $this;
+    }
+
+    /**
+     * toArray
+     * @param string|null $name
+     * @return array
+     */
+    public function toArray(?string $name = null): array
+    {
+        return [];
     }
 }

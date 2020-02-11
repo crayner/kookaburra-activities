@@ -25,7 +25,8 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @ORM\Table(
  *     options={"auto_increment": 1},
  *     name="ActivityAttendance",
- *     indexes={ORM\Index(name="activity", columns={"activity"}),
+ *     indexes={
+ *          @ORM\Index(name="activity", columns={"activity"}),
  *          @ORM\Index(name="personTaker", columns={"person_taker"})}
  * )
  * @ORM\HasLifecycleCallbacks

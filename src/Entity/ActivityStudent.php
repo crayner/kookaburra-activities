@@ -14,6 +14,7 @@
 namespace Kookaburra\Activities\Entity;
 
 use App\Entity\FinanceInvoice;
+use App\Manager\EntityInterface;
 use App\Manager\Traits\BooleanList;
 use Doctrine\ORM\Mapping as ORM;
 use Kookaburra\UserAdmin\Entity\Person;
@@ -24,19 +25,21 @@ use Symfony\Component\Validator\Constraints as Assert;
  * Class ActivityStudentRepository
  * @package Kookaburra\Activities\Entity
  * @ORM\Entity(repositoryClass="Kookaburra\Activities\Repository\ActivityStudentRepository")
- * @ORM\Table(options={"auto_increment": 1}, name="ActivityStudent",
+ * @ORM\Table(
+ *     options={"auto_increment": 1},
+ *     name="ActivityStudent",
  *     indexes={
  *         @ORM\Index(name="activity", columns={"activity"}),
  *         @ORM\Index(name="person", columns={"person"}),
  *         @ORM\Index(name="invoice", columns={"invoice"}),
  *         @ORM\Index(name="backupActivity", columns={"activity_backup"})
  *     },
- *     uniqueConstraints={name="activityPerson", columns={"person","activity"}}
+ *     uniqueConstraints={@ORM\UniqueConstraint(name="activityPerson", columns={"person","activity"})}
  * )
  * @UniqueEntity({"person","activity"})
  * @ORM\HasLifecycleCallbacks()
  */
-class ActivityStudent
+class ActivityStudent implements EntityInterface
 {
     use BooleanList;
 
@@ -255,5 +258,15 @@ class ActivityStudent
     {
         $this->invoice = $invoice;
         return $this;
+    }
+
+    /**
+     * toArray
+     * @param string|null $name
+     * @return array
+     */
+    public function toArray(?string $name = null): array
+    {
+        return [];
     }
 }

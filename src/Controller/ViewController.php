@@ -15,9 +15,11 @@
 
 namespace Kookaburra\Activities\Controller;
 
+use App\Provider\ProviderFactory;
+use Kookaburra\Activities\Entity\Activity;
+use Kookaburra\Activities\Pagination\ActivityPagination;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
@@ -30,11 +32,14 @@ class ViewController extends AbstractController
      * view
      * @Route("/view/", name="view")
      * @IsGranted("ROLE_ROUTE")
+     * @param ActivityPagination $pagination
+     * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function view()
+    public function view(ActivityPagination $pagination)
     {
-        dd($this);
-        $x = new Response('Hello');
-        return $x;
+        $content = ProviderFactory::getRepository(Activity::class)->findBy([], ['name' => 'ASC']);
+        $pagination->setContent($content)
+            ->setPaginationScript();
+        return $this->render('@KookaburraActivities/view.html.twig');
     }
 }

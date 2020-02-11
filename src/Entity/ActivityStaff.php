@@ -12,6 +12,7 @@
  */
 namespace Kookaburra\Activities\Entity;
 
+use App\Manager\EntityInterface;
 use Doctrine\ORM\Mapping as ORM;
 use Kookaburra\UserAdmin\Entity\Person;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -26,7 +27,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  *          @ORM\Index(name="person", columns={"person"})
  *     })
  */
-class ActivityStaff
+class ActivityStaff implements EntityInterface
 {
     /**
      * @var integer|null
@@ -142,5 +143,15 @@ class ActivityStaff
     {
         $this->role = in_array($role, self::getRoleList()) ? $role : 'Organiser';
         return $this;
+    }
+
+    /**
+     * toArray
+     * @param string|null $name
+     * @return array
+     */
+    public function toArray(?string $name = null): array
+    {
+        // TODO: Implement toArray() method.
     }
 }

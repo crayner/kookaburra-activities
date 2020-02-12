@@ -37,9 +37,19 @@ class ViewController extends AbstractController
      */
     public function view(ActivityPagination $pagination)
     {
-        $content = ProviderFactory::getRepository(Activity::class)->findBy([], ['name' => 'ASC']);
+        $content = ProviderFactory::getRepository(Activity::class)->findForPagination();
         $pagination->setContent($content)
             ->setPaginationScript();
         return $this->render('@KookaburraActivities/view.html.twig');
+    }
+
+    /**
+     * display
+     * @param Activity $activity
+     * @Route("/{activity}/display/", name="display")
+     */
+    public function display(Activity $activity)
+    {
+
     }
 }

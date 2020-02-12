@@ -601,6 +601,7 @@ class Activity implements EntityInterface
     }
 
     /**
+     * getSlots
      * @return Collection|null
      */
     public function getSlots(): ?Collection

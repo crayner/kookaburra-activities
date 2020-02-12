@@ -68,4 +68,19 @@ class ActivityRepository extends ServiceEntityRepository
             ->getQuery()
             ->getResult();
     }
+
+    /**
+     * findForPagination
+     * @return array
+     */
+    public function findForPagination(): array
+    {
+        return $this->createQueryBuilder('a')
+            ->select(['a','s', 'd'])
+            ->leftJoin('a.slots', 's')
+            ->leftJoin('s.dayOfWeek', 'd')
+            ->orderBy('a.name', 'ASC')
+            ->getQuery()
+            ->getResult();
+    }
 }

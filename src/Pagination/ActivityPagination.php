@@ -75,10 +75,9 @@ class ActivityPagination extends ReactPaginationManager
         $action->setTitle('View')
             ->setColumnClass('column p-2 sm:p-3')
             ->setSpanClass('fas fa-search-plus fa-fw fa-1-5x text-gray-700')
-            ->setRoute('activities__details')
+            ->setRoute('activities__display')
             ->setRouteParams(['activity' => 'id']);
         $row->addAction($action);
-
 
         $this->setRow($row);
         return $this;

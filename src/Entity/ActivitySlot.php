@@ -42,7 +42,7 @@ class ActivitySlot implements EntityInterface
     /**
      * @var Activity|null
      * @ORM\ManyToOne(targetEntity="Activity", inversedBy="slots")
-     * @ORM\JoinColumn(name="activity",referencedColumnName="id", nullable=false)
+     * @ORM\JoinColumn(name="activity", referencedColumnName="id", nullable=false)
      * @Assert\NotBlank()
      */
     private $activity;

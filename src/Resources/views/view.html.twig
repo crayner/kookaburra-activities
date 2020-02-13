@@ -1,11 +1,11 @@
 {% trans_default_domain 'Activities' %}
 {% extends 'kookaburra.html.twig' %}
 
-{% set moduleName = 'Activities' %}
 {% set module = {baseURL: 'activities',
     crumbs: [{uri: 'activities__view', name: 'Activities'}],
     title: 'Activities', domain: 'Activities'} %}
 {% set breadcrumbs = 'new' %}
+{% set moduleName = 'Activities' %}
 
 {% block content %}
     <div id="paginationContent"></div>

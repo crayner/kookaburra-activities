@@ -19,6 +19,7 @@ use App\Entity\Setting;
 use App\Provider\ProviderFactory;
 use Kookaburra\Activities\Entity\Activity;
 use Kookaburra\Activities\Pagination\ActivityPagination;
+use Kookaburra\UserAdmin\Util\SecurityHelper;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -65,6 +66,7 @@ class ViewController extends AbstractController
                     'activityByType' => ProviderFactory::create(Setting::class)->getSettingByScopeAsString('Activities', 'dateType'),
                     'hideExternalProviderCost' => ProviderFactory::create(Setting::class)->getSettingByScopeAsBoolean('Activities', 'hideExternalProviderCost'),
                     'access' => ProviderFactory::create(Setting::class)->getSettingByScopeAsString('Activities', 'access'),
+                    'highestAction' => SecurityHelper::getHighestGroupedAction('activities__details'),
                 ]
             ),
             'header' => $activity->getName(),

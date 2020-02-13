@@ -1,5 +1,7 @@
 {% trans_default_domain 'Activities' %}
-{% if not activity.access %}
+{% if highestAction is same as(false) %}
+    <div class='error'>{{ 'return.error.9'|trans({}, 'messages') }}</div>
+{% elseif not activity.access %}
     <div class='error'>{{ 'Activity listing is currently closed.'|trans }}</div>
 {% elseif not activity.isActive %}
     <div class='error'>{{ 'The selected record does not exist, or you do not have access to it.'|trans({}, 'messages') }}</div>
@@ -88,10 +90,10 @@
         <table class="w-full striped">
             <thead>
                 <tr>
-                    <th>{{ 'Day'|trans }}</th>
-                    <th>{{ 'Start Time'|trans }}</th>
-                    <th>{{ 'Finish Time'|trans }}</th>
-                    <th>{{ 'Location'|trans }}</th>
+                    <th class="widthMax25">{{ 'Day'|trans }}</th>
+                    <th class="widthMax20">{{ 'Start Time'|trans }}</th>
+                    <th class="widthMax20">{{ 'Finish Time'|trans }}</th>
+                    <th class="widthMax30">{{ 'Location'|trans }}</th>
                 </tr>
             </thead>
             <tbody>

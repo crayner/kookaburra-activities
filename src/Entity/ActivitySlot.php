@@ -77,7 +77,7 @@ class ActivitySlot implements EntityInterface
 
     /**
      * @var \DateTimeImmutable|null
-     * @ORM\Column(type="time",name="time_end")
+     * @ORM\Column(type="time_immutable",name="time_end")
      */
     private $timeEnd;
 

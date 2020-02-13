@@ -74,8 +74,10 @@ class ActivityPagination extends ReactPaginationManager
         $action = new PaginationAction();
         $action->setTitle('View')
             ->setColumnClass('column p-2 sm:p-3')
-            ->setSpanClass('fas fa-search-plus fa-fw fa-1-5x text-gray-700')
-            ->setRoute('activities__display')
+            ->setSpanClass('fas fa-info fa-fw fa-1-5x text-gray-700')
+            ->setOnClick('displayInformation')
+            ->setRoute('activities__details')
+            ->setDisplayWhen('access')
             ->setRouteParams(['activity' => 'id']);
         $row->addAction($action);
 

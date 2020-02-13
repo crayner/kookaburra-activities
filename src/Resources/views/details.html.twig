@@ -1,0 +1,137 @@
+{% trans_default_domain 'Activities' %}
+{% if not activity.access %}
+    <div class='error'>{{ 'Activity listing is currently closed.'|trans }}</div>
+{% elseif not activity.isActive %}
+    <div class='error'>{{ 'The selected record does not exist, or you do not have access to it.'|trans({}, 'messages') }}</div>
+{% elseif activityByType is same as('Date') and not(activity.listingStart|date('Y-m-d') <= 'now'|date('Y-m-d') and activity.listingEnd|date('Y-m-d') >= 'now'|date('Y-m-d')) %}
+    <div class='error'>{{ 'The selected record does not exist, or you do not have access to it.'|trans({}, 'messages') }}</div>
+{% elseif activityByType is not same as('Date') and activity.academicYearTermList|length == 0 %}
+    <div class='error'>{{ 'The selected record does not exist, or you do not have access to it.'|trans({}, 'messages') }}</div>
+{% else %}
+<div>
+    <table class="blank noMargin noPadding w-full">
+        <tbody>
+            <tr>
+                <td style="width: 33%; vertical-align: top">
+                    {% if activityByType is not same as('Date') %}
+                        <span style="font-size: 115%; font-weight: bold">{{ 'Terms'|trans }}</span>
+                        <br/>{{ activity.getAcademicYearTermListNames() }}
+                    {% else %}
+                        <span style="font-size: 115%; font-weight: bold">{{ 'Dates'|trans }}</span>
+                        <br/>{{ activity.programStart|date(dateFormat()) }} - {{ activity.programEnd|date(dateFormat()) }}
+                    {% endif %}
+                    <br/>&nbsp;
+                    <br/>&nbsp;
+                </td>
+                <td style="width: 33%; vertical-align: top">
+                    <span style="font-size: 115%; font-weight: bold">{{ 'Year Groups'|trans({}, 'SchoolAdmin') }}</span>
+                    <br/>
+                    <i>{{ activity.getYears() }}</i>
+                </td>
+                <td style="width: 33%; vertical-align: top">
+                    {% if activityTypes|length > 0 %}
+                    <span style="font-size: 115%; font-weight: bold">{{ 'Activity Type'|trans }}</span>
+                    <br/>
+                    <i>{{ activity.getType() }}</i>
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 33%; vertical-align: top">
+                    {% if hideExternalProviderCost and activity.provider is same as('External') %}
+                        <span style='font-size: 115%; font-weight: bold'>{{ 'Cost'|trans }}</span><br/>
+                        <i>{{ 'See Description below.'|trans }}</i>
+                    {% else %}
+                        <span style="font-size: 115%; font-weight: bold">{{ 'Cost ({paymentType})'|trans({'{paymentType}': activity.paymentType}) }}</span><br/>
+                        {% if activity.payment == 0 %}
+                            <i>{{ 'Free'|trans }}</i>
+                        {% else %}
+                            {{ formatCurrency(activity.payment) }}
+                        {% endif %}
+                    {% endif %}
+                </td>
+                <td style="width: 33%; vertical-align: top">
+                    <span style="font-size: 115%; font-weight: bold">{{ 'Maximum Participants'|trans }}</span>
+                    <br>{{ activity.maxParticipants }}</td>
+                <td style="width: 33%; vertical-align: top">
+                    <span style="font-size: 115%; font-weight: bold">{{ 'Staff'|trans }}</span>
+                    <br>
+                    <ul style="margin-left: -5px; list-style: none">
+                        {% for staff in activity.staff %}
+                            <li>{{ staff.person.formatName({initial: true, preferred: false, title: true}) }}</li>
+                        {% endfor %}
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 33%; vertical-align: top"{% if activity.description is same as('') %} colspan="3" {% endif %}>
+                    <span style="font-size: 115%; font-weight: bold">{{ 'Provider'|trans }}</span>
+                    <br>
+                    <i>{{ activity.getTranslatedProvider() }}</i>
+                </td>
+                {% if activity.description is not same as('') %}
+                    <td style='text-align: justify; width: 66%; vertical-align: top' colspan="2">
+                        <span style="font-size: 115%; font-weight: bold">{{ 'Description'|trans }}</span><br/>
+                        {{ activity.description }}
+                    </td>
+                {% endif %}
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div style="font-size: 115%; padding-top: 6px; clear: both;">
+    <h3 style="padding-top: 0px; margin-top: 5px">{{ 'Time Slots'|trans }}</h3>
+    {% if activity.slots|length == 0 %}
+        <i style="font-size: 12px;">{{ 'None'|trans }}</i>
+    {% else %}
+        <table class="w-full striped">
+            <thead>
+                <tr>
+                    <th>{{ 'Day'|trans }}</th>
+                    <th>{{ 'Start Time'|trans }}</th>
+                    <th>{{ 'Finish Time'|trans }}</th>
+                    <th>{{ 'Location'|trans }}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for slot in activity.slots %}
+                    <tr>
+                        <td>{{ slot.dayofweek.name }}</td>
+                        <td>{{ slot.timeStart|date('H:i') }}</td>
+                        <td>{{ slot.timeEnd|date('H:i') }}</td>
+                        <td>{% if slot.facility is not same as(null) %}
+                                {{ slot.facility.name }}
+                            {% else %}
+                                {{ slot.locationExternal }}
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+    {% if app.user.person.primaryRole.category is same as('Staff') %}
+        <h3 style="padding-top: 0px; margin-top: 5px">{{ 'Participants'|trans }}</h3>
+        {% if activity.students('Accepted')|length == 0 %}
+            <i style="font-size: 12px;">{{ 'None'|trans({}, 'messages') }}</i>
+        {% else %}
+            <ol style='margin-left: 15px'>
+                {% for student in activity.students('Accepted') %}
+                    <li>{{ student.person.formatName() }}</li>
+                {% endfor %}
+            </ol>
+        {% endif %}
+        <h3 style="padding-top: 0px; margin-top: 5px">{{ 'Waiting List'|trans }}</h3>
+        {% if activity.students('Waiting List')|length == 0 %}
+            <i style="font-size: 12px;">{{ 'None'|trans({}, 'messages') }}</i>
+        {% else %}
+            <ol style='margin-left: 15px'>
+                {% for student in activity.students('Waiting List') %}
+                    <li>{{ student.person.formatName() }}</li>
+                {% endfor %}
+            </ol>
+        {% endif %}
+    {% endif %}
+</div>
+{% endif %}

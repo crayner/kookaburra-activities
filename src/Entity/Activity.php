@@ -106,25 +106,25 @@ class Activity implements EntityInterface
     private $academicYearTermList;
 
     /**
-     * @var \DateTime|null
+     * @var \DateTimeImmutable|null
      * @ORM\Column(type="date_immutable", name="listing_start", nullable=true)
      */
     private $listingStart;
 
     /**
-     * @var \DateTime|null
+     * @var \DateTimeImmutable|null
      * @ORM\Column(type="date_immutable", name="listing_end", nullable=true)
      */
     private $listingEnd;
 
     /**
-     * @var \DateTime|null
+     * @var \DateTimeImmutable|null
      * @ORM\Column(type="date_immutable", name="program_start", nullable=true, nullable=true)
      */
     private $programStart;
 
     /**
-     * @var \DateTime|null
+     * @var \DateTimeImmutable|null
      * @ORM\Column(type="date_immutable", name="program_end", nullable=true)
      */
     private $programEnd;
@@ -256,11 +256,20 @@ class Activity implements EntityInterface
     }
 
     /**
-     * @return string|null
+     * isActive
+     * @return bool
      */
-    public function getActive(): ?string
+    public function isActive(): bool
     {
-        return $this->active;
+        return $this->getActive() === 'Y';
+    }
+
+    /**
+     * @return string
+     */
+    public function getActive(): string
+    {
+        return self::checkBoolean($this->active);
     }
 
     /**
@@ -345,71 +354,13 @@ class Activity implements EntityInterface
         return $this;
     }
 
+    /**
+     * getTypeList
+     * @return array
+     */
     public static function getTypeList(): array
     {
         return ProviderFactory::create(Setting::class)->getSettingByScopeAsArray('Activities', 'activityTypes');
-    }
-
-    /**
-     * setListingStart
-     * @param \DateTime|null $listingStart
-     * @return Activity
-     */
-    public function setListingStart(?\DateTime $listingStart): Activity
-    {
-        $this->listingStart = $listingStart;
-        return $this;
-    }
-
-    /**
-     * @return \DateTime|null
-     */
-    public function getListingEnd(): ?\DateTime
-    {
-        return $this->listingEnd;
-    }
-
-    /**
-     * @param \DateTime|null $listingEnd
-     */
-    public function setListingEnd(?\DateTime $listingEnd): Activity
-    {
-        $this->listingEnd = $listingEnd;
-        return $this;
-    }
-
-    /**
-     * @return \DateTime|null
-     */
-    public function getProgramStart(): ?\DateTime
-    {
-        return $this->programStart;
-    }
-
-    /**
-     * @param \DateTime|null $programStart
-     */
-    public function setProgramStart(?\DateTime $programStart): Activity
-    {
-        $this->programStart = $programStart;
-        return $this;
-    }
-
-    /**
-     * @return \DateTime|null
-     */
-    public function getProgramEnd(): ?\DateTime
-    {
-        return $this->programEnd;
-    }
-
-    /**
-     * @param \DateTime|null $programEnd
-     */
-    public function setProgramEnd(?\DateTime $programEnd): Activity
-    {
-        $this->programEnd = $programEnd;
-        return $this;
     }
 
     /**
@@ -454,9 +405,9 @@ class Activity implements EntityInterface
     /**
      * @return string|null
      */
-    public function getDescription(): ?string
+    public function getDescription(): string
     {
-        return $this->description;
+        return $this->description ?: '';
     }
 
     /**
@@ -532,11 +483,83 @@ class Activity implements EntityInterface
     }
 
     /**
-     * @return \DateTime|null
+     * @return \DateTimeImmutable|null
      */
-    public function getListingStart(): ?\DateTime
+    public function getListingStart(): ?\DateTimeImmutable
     {
         return $this->listingStart;
+    }
+
+    /**
+     * ListingStart.
+     *
+     * @param \DateTimeImmutable|null $listingStart
+     * @return Activity
+     */
+    public function setListingStart(?\DateTimeImmutable $listingStart): Activity
+    {
+        $this->listingStart = $listingStart;
+        return $this;
+    }
+
+    /**
+     * @return \DateTimeImmutable|null
+     */
+    public function getListingEnd(): ?\DateTimeImmutable
+    {
+        return $this->listingEnd;
+    }
+
+    /**
+     * ListingEnd.
+     *
+     * @param \DateTimeImmutable|null $listingEnd
+     * @return Activity
+     */
+    public function setListingEnd(?\DateTimeImmutable $listingEnd): Activity
+    {
+        $this->listingEnd = $listingEnd;
+        return $this;
+    }
+
+    /**
+     * @return \DateTimeImmutable|null
+     */
+    public function getProgramStart(): ?\DateTimeImmutable
+    {
+        return $this->programStart;
+    }
+
+    /**
+     * ProgramStart.
+     *
+     * @param \DateTimeImmutable|null $programStart
+     * @return Activity
+     */
+    public function setProgramStart(?\DateTimeImmutable $programStart): Activity
+    {
+        $this->programStart = $programStart;
+        return $this;
+    }
+
+    /**
+     * @return \DateTimeImmutable|null
+     */
+    public function getProgramEnd(): ?\DateTimeImmutable
+    {
+        return $this->programEnd;
+    }
+
+    /**
+     * ProgramEnd.
+     *
+     * @param \DateTimeImmutable|null $programEnd
+     * @return Activity
+     */
+    public function setProgramEnd(?\DateTimeImmutable $programEnd): Activity
+    {
+        $this->programEnd = $programEnd;
+        return $this;
     }
 
     /**
@@ -579,13 +602,21 @@ class Activity implements EntityInterface
     /**
      * @return Collection|null
      */
-    public function getStudents(): ?Collection
+    public function getStudents(string $filter = ''): ?Collection
     {
         if (empty($this->students))
             $this->students = new ArrayCollection();
 
         if ($this->students instanceof PersistentCollection)
             $this->students->initialize();
+
+        if ($filter !== '')
+        {
+            return $this->students->filter(function(ActivityStudent $student) use($filter) {
+                if ($student->getStatus() === $filter)
+                    return $student;
+            });
+        }
 
         return $this->students;
     }
@@ -638,11 +669,12 @@ class Activity implements EntityInterface
             'name' => $this->getName(),
             'id' => $this->getId(),
             'activityType' => $this->getType(),
-            'provider' => $this->getProvider() === 'External' ? TranslationsHelper::translate('External', [], 'Activities') : ProviderFactory::create(Setting::class)->getSettingByScopeAsString('System','organisationNameShort'),
+            'provider' => $this->getTranslatedProvider(),
             'terms' => $this->getAcademicYearTermListNames(),
             'days' => $this->getDaysOfWeek(),
             'years' => $this->getYears(),
-            'cost' => $this->getPayment() ?: TranslationsHelper::translate('None', [], 'messages'),
+            'cost' => $this->getPayment() ?: TranslationsHelper::translate('Free', [], 'Activities'),
+            'access' => $this->getAccess(),
         ];
     }
 
@@ -650,7 +682,7 @@ class Activity implements EntityInterface
      * getDaysOfWeek
      * @return string
      */
-    private function getDaysOfWeek(): string
+    public function getDaysOfWeek(): string
     {
         $days = [];
         foreach($this->getSlots() as $slot)
@@ -664,7 +696,7 @@ class Activity implements EntityInterface
      * getYears
      * @return string
      */
-    private function getYears(): string
+    public function getYears(): string
     {
         $result = [];
         $years = ProviderFactory::create(YearGroup::class)->findAll();
@@ -688,7 +720,7 @@ class Activity implements EntityInterface
      * getAcademicYearTermListNames
      * @return string
      */
-    private function getAcademicYearTermListNames(): string
+    public function getAcademicYearTermListNames(): string
     {
         $result = [];
         foreach($this->getAcademicYearTermList() as $id)
@@ -700,5 +732,23 @@ class Activity implements EntityInterface
             $result[] = $this->terms[$id]->getName();
         }
         return implode(', ', $result);
+    }
+
+    /**
+     * getTranslatedProvider
+     * @return string|null
+     */
+    public function getTranslatedProvider(): string
+    {
+        return $this->getProvider() === 'External' ? TranslationsHelper::translate('External', [], 'Activities') : ProviderFactory::create(Setting::class)->getSettingByScopeAsString('System','organisationNameShort');
+    }
+
+    /**
+     * getAccess
+     * @return boolean
+     */
+    public function getAccess(): bool
+    {
+        return in_array(ProviderFactory::create(Setting::class)->getSettingByScopeAsString('Activities', 'access'), ['View', 'Register']);
     }
 }

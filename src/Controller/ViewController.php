@@ -15,11 +15,14 @@
 
 namespace Kookaburra\Activities\Controller;
 
+use App\Entity\Setting;
 use App\Provider\ProviderFactory;
 use Kookaburra\Activities\Entity\Activity;
 use Kookaburra\Activities\Pagination\ActivityPagination;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
@@ -31,7 +34,8 @@ class ViewController extends AbstractController
     /**
      * view
      * @Route("/view/", name="view")
-     * @IsGranted("ROLE_ROUTE")
+     * @Route("/", name="view_home")
+     * @Security("is_granted('ROLE_ROUTE', ['activities__view'])")
      * @param ActivityPagination $pagination
      * @return \Symfony\Component\HttpFoundation\Response
      */
@@ -46,10 +50,24 @@ class ViewController extends AbstractController
     /**
      * display
      * @param Activity $activity
-     * @Route("/{activity}/display/", name="display")
+     * @Route("/{activity}/details/", name="details")
+     * @IsGranted("ROLE_ROUTE")
+     * @return JsonResponse
      */
     public function display(Activity $activity)
     {
-
+        $options = Activity::getTypelist();
+        return new JsonResponse([
+            'content' => $this->renderView('@KookaburraActivities/details.html.twig',
+                [
+                    'activity' => $activity,
+                    'activityTypes' => count($options) === 0 ? null : $activity->getType(),
+                    'activityByType' => ProviderFactory::create(Setting::class)->getSettingByScopeAsString('Activities', 'dateType'),
+                    'hideExternalProviderCost' => ProviderFactory::create(Setting::class)->getSettingByScopeAsBoolean('Activities', 'hideExternalProviderCost'),
+                    'access' => ProviderFactory::create(Setting::class)->getSettingByScopeAsString('Activities', 'access'),
+                ]
+            ),
+            'header' => $activity->getName(),
+        ], 200);
     }
 }

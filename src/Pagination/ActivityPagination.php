@@ -21,10 +21,10 @@ use App\Manager\Entity\PaginationColumn;
 use App\Manager\Entity\PaginationFilter;
 use App\Manager\Entity\PaginationRow;
 use App\Manager\ReactPaginationInterface;
-use App\Manager\ReactPaginationManager;
+use App\Manager\AbstractPaginationManager;
 use App\Util\TranslationsHelper;
 
-class ActivityPagination extends ReactPaginationManager
+class ActivityPagination extends AbstractPaginationManager
 {
     public function execute(): ReactPaginationInterface
     {

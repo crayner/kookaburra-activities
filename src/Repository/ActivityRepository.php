@@ -71,16 +71,21 @@ class ActivityRepository extends ServiceEntityRepository
 
     /**
      * findForPagination
+     * @param bool $activeOnly
      * @return array
      */
-    public function findForPagination(): array
+    public function findForPagination(bool $activeOnly = true): array
     {
-        return $this->createQueryBuilder('a')
-            ->select(['a','s', 'd'])
+        $query = $this->createQueryBuilder('a')
+            ->select(['a','s','d', 'a_s'])
             ->leftJoin('a.slots', 's')
             ->leftJoin('s.dayOfWeek', 'd')
-            ->orderBy('a.name', 'ASC')
-            ->getQuery()
+            ->leftJoin('a.students', 'a_s')
+            ->orderBy('a.name', 'ASC');
+        if ($activeOnly)
+            $query->where('a.active = :yes')
+                ->setParameter('yes', 'Y');
+        return $query->getQuery()
             ->getResult();
     }
 }

@@ -675,6 +675,7 @@ class Activity implements EntityInterface
             'years' => $this->getYears(),
             'cost' => $this->getPayment() ?: TranslationsHelper::translate('Free', [], 'Activities'),
             'access' => $this->getAccess(),
+            'studentCount' => $this->getStudentCount(),
         ];
     }
 
@@ -750,5 +751,18 @@ class Activity implements EntityInterface
     public function getAccess(): bool
     {
         return in_array(ProviderFactory::create(Setting::class)->getSettingByScopeAsString('Activities', 'access'), ['View', 'Register']);
+    }
+
+    /**
+     * getStudentCount
+     * @return string
+     */
+    public function getStudentCount(): string
+    {
+        $result = $this->getStudents()->count();
+        $result .= $this->getStudents('Waiting List')->count() > 0 ? '<br/><small><em>' . $this->getStudents('Waiting List')->count() . ' ' . TranslationsHelper::translate('Waiting', [], 'Activities') . '</em></small>' : '';
+        $result .= $this->getStudents('Pending')->count() > 0 ? '<br/><small><em>' . $this->getStudents('Pending')->count() . ' ' . TranslationsHelper::translate('Pending', [], 'Activities') . '</em></small>' : '';
+
+        return strval($result);
     }
 }

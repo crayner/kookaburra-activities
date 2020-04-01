@@ -1,0 +1,46 @@
+Activities: Activités
+'My Activities': 'Mes activités'
+'View Activities': 'Consulter les activités'
+Administration: Administration
+'Generate Invoices': 'Générer des factures'
+'Manage Activities': 'Gérer les activités'
+Attendance: Présence
+'Attendance History by Activity': 'Historique des présences par activité'
+'Enter Activity Attendance': 'Entrer la participation aux activités'
+'Printable Attendance Sheet': 'Feuille de présence imprimable'
+Reports: Etats
+'Activity Attendance by Date': 'Fréquentation d''activité par date'
+'Activity Choices by Form Group': 'Activity Choices by Form Group'
+'Activity Choices by Student': 'Choix d''activité par élève'
+'Activity Enrolment Summary': 'Résumé d-inscription à une activité'
+'Activity Spread by Roll Group': 'Diffusion d-activité par groupe de liste'
+'Activity Type by Roll Group': 'Type d-activité par groupe de liste'
+'Participants by Activity': 'Participants par activité'
+'Module Menu': 'Menu de module'
+View: Voir
+Free: Free
+Activity: Activité
+Provider: Fournisseur
+Terms: Termes
+Years: Années
+Cost: Coût
+Actions: Actions
+'There are no records to display.': 'Il n y a aucun enregistrements à afficher.'
+'Records {start}-{end} of {total}': 'Records {start}-{end} of {total}'
+'First Page': 'First Page'
+'Previous Page': 'Previous Page'
+'Next Page': 'Next Page'
+'Last Page': 'Last Page'
+'Activity Type': 'Activity Type'
+'Cost ({paymentType})': 'Cost ({paymentType})'
+'Maximum Participants': 'Participants maximum'
+Staff: 'Membre du personnel'
+Description: Description
+'Time Slots': 'Plage horaire'
+Day: Jour
+'Start Time': 'Heure de début'
+'Finish Time': 'Finish Time'
+Location: Localisation
+Participants: Participants
+'Activity listing is currently closed.': 'Le listing d-activité est présentement fermé.'
+'Waiting List': 'Liste d''attente'

@@ -1,0 +1,46 @@
+Activities: 活动
+'My Activities': 我的活动
+'View Activities': 查看活动
+Administration: 行政
+'Generate Invoices': 生成发票
+'Manage Activities': 管理活动
+Attendance: 考勤
+'Attendance History by Activity': 活动考勤记录
+'Enter Activity Attendance': 进入活动考勤
+'Printable Attendance Sheet': 可打印考勤单
+Reports: 报告
+'Activity Attendance by Date': 通过日期激活考勤
+'Activity Choices by Form Group': 'Activity Choices by Form Group'
+'Activity Choices by Student': 学员的活动选择
+'Activity Enrolment Summary': 活动登记摘要
+'Activity Spread by Roll Group': 通过小组的活动拓展
+'Activity Type by Roll Group': 通过小组的活动类型
+'Participants by Activity': 活动参与者
+'Module Menu': 模块菜单
+View: 查看
+Free: Free
+Activity: 活动
+Provider: 提供者
+Terms: 学期
+Years: Years
+Cost: 支出
+Actions: 操作
+'There are no records to display.': '查询 无记录。'
+'Records {start}-{end} of {total}': 'Records {start}-{end} of {total}'
+'First Page': 'First Page'
+'Previous Page': 'Previous Page'
+'Next Page': 'Next Page'
+'Last Page': 'Last Page'
+'Activity Type': 'Activity Type'
+'Cost ({paymentType})': 'Cost ({paymentType})'
+'Maximum Participants': 最大参与者
+Staff: 员工
+Description: 描述
+'Time Slots': 时段
+Day: 天
+'Start Time': 开始时间
+'Finish Time': 'Finish Time'
+Location: 位置
+Participants: 参与者
+'Activity listing is currently closed.': 活动已截止。
+'Waiting List': 等候名单

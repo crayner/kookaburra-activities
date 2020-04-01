@@ -1,0 +1,46 @@
+Activities: faaliyetler
+'My Activities': 'Benim aktivitelerim'
+'View Activities': 'Aktiviteleri Görüntüle'
+Administration: yönetim
+'Generate Invoices': 'Fatura Oluştur'
+'Manage Activities': 'Aktiviteleri Yönet'
+Attendance: katılım
+'Attendance History by Activity': 'Faaliyete Göre Seyirci Tarihi'
+'Enter Activity Attendance': 'Etkinlik Katılımcılığını Girin'
+'Printable Attendance Sheet': 'Yazdırılabilir Katılım Sayfası'
+Reports: Raporlar
+'Activity Attendance by Date': 'Tarihe Göre Faaliyetlere Katılım'
+'Activity Choices by Form Group': 'Activity Choices by Form Group'
+'Activity Choices by Student': 'Öğrencinin Aktivite Seçimleri'
+'Activity Enrolment Summary': 'Etkinlik Kayıt Özeti'
+'Activity Spread by Roll Group': 'Roll Group''a göre Faaliyet Yayılımı'
+'Activity Type by Roll Group': 'Rulo Grubuna Göre Aktivite Türü'
+'Participants by Activity': 'Faaliyete Göre Katılımcılar'
+'Module Menu': 'Modül Menüsü'
+View: Görünüm
+Free: Free
+Activity: Aktivite
+Provider: sağlayan
+Terms: şartlar
+Years: yıl
+Cost: Maliyet
+Actions: Eylemler
+'There are no records to display.': 'Gösterilecek kayıt yok.'
+'Records {start}-{end} of {total}': 'Records {start}-{end} of {total}'
+'First Page': 'First Page'
+'Previous Page': 'Previous Page'
+'Next Page': 'Next Page'
+'Last Page': 'Last Page'
+'Activity Type': 'Activity Type'
+'Cost ({paymentType})': 'Cost ({paymentType})'
+'Maximum Participants': 'Maksimum Katılımcılar'
+Staff: Personel
+Description: Açıklama
+'Time Slots': 'Zaman dilimleri'
+Day: Gün
+'Start Time': 'Başlama zamanı'
+'Finish Time': 'Finish Time'
+Location: yer
+Participants: Katılımcılar
+'Activity listing is currently closed.': 'Etkinlik listesi şu anda kapalı.'
+'Waiting List': 'Bekleme listesi'

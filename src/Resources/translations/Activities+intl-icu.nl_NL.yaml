@@ -1,0 +1,46 @@
+Activities: Leeractiviteiten
+'My Activities': 'Mijn leeractiviteiten'
+'View Activities': 'Toon Leeractiviteiten'
+Administration: Beheer
+'Generate Invoices': 'Maak facturen op'
+'Manage Activities': 'Beheer leeractiviteiten'
+Attendance: Aanwezigheid
+'Attendance History by Activity': 'Attendance History by Activity'
+'Enter Activity Attendance': 'Geef absenties voor de leeractiviteit in.'
+'Printable Attendance Sheet': 'Afdrukbare absentielijst'
+Reports: Rapporten
+'Activity Attendance by Date': 'Activity Attendance by Date'
+'Activity Choices by Form Group': 'Activity Choices by Form Group'
+'Activity Choices by Student': 'Keuzeactiviteiten van de Leerling'
+'Activity Enrolment Summary': 'Overzicht Inschrijving Leeractiviteiten'
+'Activity Spread by Roll Group': 'Leeractiviteiten per Klasgroep'
+'Activity Type by Roll Group': 'Type leeractiviteit per klas'
+'Participants by Activity': 'Deelnemers per leeractiviteit'
+'Module Menu': 'Menu modules'
+View: Weergave
+Free: Free
+Activity: Leeractiviteit
+Provider: Aanbieder
+Terms: Termijnen
+Years: Jaren
+Cost: Prijs
+Actions: Acties
+'There are no records to display.': 'Er zijn geen gegevens om weer te geven.'
+'Records {start}-{end} of {total}': 'Records {start}-{end} of {total}'
+'First Page': 'First Page'
+'Previous Page': 'Previous Page'
+'Next Page': 'Next Page'
+'Last Page': 'Last Page'
+'Activity Type': 'Activity Type'
+'Cost ({paymentType})': 'Cost ({paymentType})'
+'Maximum Participants': 'Maximum Deelnemers'
+Staff: Personeel
+Description: Beschrijving
+'Time Slots': Lesblokken
+Day: Dag
+'Start Time': Begintijdstip
+'Finish Time': 'Finish Time'
+Location: Locatie
+Participants: Deelnemers
+'Activity listing is currently closed.': 'Oplijsten van activiteiten afgesloten'
+'Waiting List': Wachtlijst

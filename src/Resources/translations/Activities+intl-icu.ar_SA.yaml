@@ -1,0 +1,46 @@
+Activities: الأنْشطة
+'My Activities': أنشطتي
+'View Activities': 'معاينة الأنشطة'
+Administration: إدارة
+'Generate Invoices': 'Generate Invoices'
+'Manage Activities': 'إدارة الأنشطة'
+Attendance: الحضور
+'Attendance History by Activity': 'سجل الحضور حسب النشاط'
+'Enter Activity Attendance': 'ادخال حضور مهمة'
+'Printable Attendance Sheet': 'كشف الحضور للطباعة'
+Reports: التقارير
+'Activity Attendance by Date': 'حضور المهام حسب التاريخ'
+'Activity Choices by Form Group': 'Activity Choices by Form Group'
+'Activity Choices by Student': 'اختيارات النشاط حسب الطالب'
+'Activity Enrolment Summary': 'ملخص الالتحاق بالنشاط'
+'Activity Spread by Roll Group': 'نشر الأنشطة حسب قائمة المجموعة'
+'Activity Type by Roll Group': 'نوع النشاط حسب قائمة المجموعة'
+'Participants by Activity': 'المشاركين حسب النشاط'
+'Module Menu': 'قائمة الموديول'
+View: معاينة
+Free: Free
+Activity: النشاط
+Provider: 'مزود الخدمة'
+Terms: الشروط
+Years: سنوات
+Cost: التكلفة
+Actions: الإجراءات
+'There are no records to display.': 'لا توجد سجلات لعرضها.'
+'Records {start}-{end} of {total}': 'Records {start}-{end} of {total}'
+'First Page': 'First Page'
+'Previous Page': 'Previous Page'
+'Next Page': 'Next Page'
+'Last Page': 'Last Page'
+'Activity Type': 'Activity Type'
+'Cost ({paymentType})': 'Cost ({paymentType})'
+'Maximum Participants': 'الحد الأقصى للمشاركين'
+Staff: 'فريق العمل'
+Description: الوصف
+'Time Slots': 'حيزات الوقت'
+Day: يوم
+'Start Time': 'وقت البدء'
+'Finish Time': 'Finish Time'
+Location: المكان
+Participants: المشاركين
+'Activity listing is currently closed.': 'قائمة النشاط مغلق حالياً.'
+'Waiting List': 'قائمة الانتظار'

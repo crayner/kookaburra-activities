@@ -1,0 +1,46 @@
+Activities: กิจกรรม
+'My Activities': กิจกรรมของฉัน
+'View Activities': ดูกิจกรรม
+Administration: การบริหาร
+'Generate Invoices': สร้างใบแจ้งหนี้
+'Manage Activities': จัดการกิจกรรม
+Attendance: การเข้าร่วม
+'Attendance History by Activity': ประวัติการเข้าร่วมกิจกรรม
+'Enter Activity Attendance': ป้อนการเข้าร่วมกิจกรรม
+'Printable Attendance Sheet': บันทึกการเข้าร่วมที่พิมพ์ได้
+Reports: รายงาน
+'Activity Attendance by Date': การเข้าร่วมกิจกรรมตามวันที่
+'Activity Choices by Form Group': 'Activity Choices by Form Group'
+'Activity Choices by Student': ทางเลือกกิจกรรมของนักศึกษา
+'Activity Enrolment Summary': สรุปการลงทะเบียนกิจกรรม
+'Activity Spread by Roll Group': 'กิจกรรมที่กระจายตาม Roll Group'
+'Activity Type by Roll Group': 'ประเภทกิจกรรมตาม Roll Group'
+'Participants by Activity': ผู้เข้าร่วมกิจกรรม
+'Module Menu': รายการโมดูล
+View: ดู
+Free: Free
+Activity: กิจกรรม
+Provider: ผู้ให้บริการ
+Terms: 'ภาคการศึกษา'
+Years: ปี
+Cost: ต้นทุน
+Actions: แอ็กชั่น
+'There are no records to display.': ไม่มีรายการในการแสดงผล
+'Records {start}-{end} of {total}': 'Records {start}-{end} of {total}'
+'First Page': หน้าแรก
+'Previous Page': 'Previous Page'
+'Next Page': 'Next Page'
+'Last Page': หน้าสุดท้าย
+'Activity Type': 'Activity Type'
+'Cost ({paymentType})': 'Cost ({paymentType})'
+'Maximum Participants': ผู้เข้าร่วมสูงสุด
+Staff: เจ้าหน้าที่
+Description: คำอธิบาย
+'Time Slots': สล็อตเวลา
+Day: วัน
+'Start Time': เวลาเริ่มต้น
+'Finish Time': 'Finish Time'
+Location: ตำแหน่งที่ตั้ง
+Participants: ผู้เข้าร่วม
+'Activity listing is currently closed.': ปิดรายการกิจกรรมแล้ว
+'Waiting List': รายการรอ

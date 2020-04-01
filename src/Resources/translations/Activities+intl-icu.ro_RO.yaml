@@ -1,0 +1,46 @@
+Activities: Activități
+'My Activities': 'Activitățile mele'
+'View Activities': 'Afișare Activități'
+Administration: Administrare
+'Generate Invoices': 'Generate Invoices'
+'Manage Activities': 'Gestionarea activităților'
+Attendance: Prezență
+'Attendance History by Activity': 'Attendance History by Activity'
+'Enter Activity Attendance': 'Enter Activity Attendance'
+'Printable Attendance Sheet': 'Printable Attendance Sheet'
+Reports: Rapoarte
+'Activity Attendance by Date': 'Activity Attendance by Date'
+'Activity Choices by Form Group': 'Activity Choices by Form Group'
+'Activity Choices by Student': 'Selectare Activitate pe cursant'
+'Activity Enrolment Summary': 'Rezumat înscriere Activități'
+'Activity Spread by Roll Group': 'Desfășurarea activităților pe Clase'
+'Activity Type by Roll Group': 'Tipul Activităților pe Clase'
+'Participants by Activity': 'Participanți pe activitate'
+'Module Menu': 'Meniu Modul'
+View: Afișare
+Free: Free
+Activity: Activitate
+Provider: Furnizor
+Terms: Scadențe
+Years: Ani
+Cost: Cost
+Actions: Acțiuni
+'There are no records to display.': 'Nu există înregistrări de afișat'
+'Records {start}-{end} of {total}': 'Records {start}-{end} of {total}'
+'First Page': 'First Page'
+'Previous Page': 'Previous Page'
+'Next Page': 'Next Page'
+'Last Page': 'Last Page'
+'Activity Type': 'Activity Type'
+'Cost ({paymentType})': 'Cost ({paymentType})'
+'Maximum Participants': 'Număr maxim participanți'
+Staff: Responsabil
+Description: Descriere
+'Time Slots': 'Precizare interval'
+Day: Zi
+'Start Time': 'Dată începere'
+'Finish Time': 'Finish Time'
+Location: Locație
+Participants: Participați
+'Activity listing is currently closed.': 'Listarea activitățior este în prezent închisă.'
+'Waiting List': 'Listă de așteptare'

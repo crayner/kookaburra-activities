@@ -1,0 +1,46 @@
+Activities: פעילויות
+'My Activities': 'הפעילויות שלי'
+'View Activities': 'הצג פעילויות'
+Administration: 'מינהל'
+'Generate Invoices': 'הפק חשבוניות'
+'Manage Activities': 'ניהול פעילויות'
+Attendance: 'נוכחות'
+'Attendance History by Activity': 'היסטוריה על פי פעילות'
+'Enter Activity Attendance': 'הזן נוכחות פעילות'
+'Printable Attendance Sheet': 'גיליון נוכחות להדפסה'
+Reports: דיווחים
+'Activity Attendance by Date': 'פעילות לפי תאריך'
+'Activity Choices by Form Group': 'Activity Choices by Form Group'
+'Activity Choices by Student': 'אפשרויות פעילות על ידי סטודנטים'
+'Activity Enrolment Summary': 'סיכום רישום פעילות'
+'Activity Spread by Roll Group': 'פעילות מורחים על ידי קבוצת רול'
+'Activity Type by Roll Group': 'סוג פעילות לפי קבוצת רול'
+'Participants by Activity': 'משתתפים לפי פעילות'
+'Module Menu': 'תפריט מודול'
+View: הצג
+Free: Free
+Activity: פעילות
+Provider: ספק
+Terms: 'תנאים'
+Years: 'שנים'
+Cost: עלות
+Actions: פעולות
+'There are no records to display.': 'אין נתונים להצגה.'
+'Records {start}-{end} of {total}': 'Records {start}-{end} of {total}'
+'First Page': 'First Page'
+'Previous Page': 'Previous Page'
+'Next Page': 'Next Page'
+'Last Page': 'Last Page'
+'Activity Type': 'Activity Type'
+'Cost ({paymentType})': 'Cost ({paymentType})'
+'Maximum Participants': 'משתתפים מרביים'
+Staff: צוות
+Description: תיאור
+'Time Slots': 'חריצי זמן'
+Day: יום
+'Start Time': 'זמן התחלה'
+'Finish Time': 'Finish Time'
+Location: מיקום
+Participants: משתתפים
+'Activity listing is currently closed.': 'רישום הפעילות סגור כעת.'
+'Waiting List': 'רשימת המתנה'

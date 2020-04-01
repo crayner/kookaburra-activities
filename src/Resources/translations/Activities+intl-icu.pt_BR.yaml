@@ -1,0 +1,46 @@
+Activities: Atividades
+'My Activities': 'Minhas atividades'
+'View Activities': 'Ver atividades'
+Administration: Administração
+'Generate Invoices': 'Gerar faturas'
+'Manage Activities': 'Gerenciar atividades'
+Attendance: Frequência
+'Attendance History by Activity': 'Histórico de frequência por atividade'
+'Enter Activity Attendance': 'Inserir Frequência na Atividade'
+'Printable Attendance Sheet': 'Folha de Frequência para impressão'
+Reports: Relatórios
+'Activity Attendance by Date': 'Frequência de atividade por data'
+'Activity Choices by Form Group': 'Activity Choices by Form Group'
+'Activity Choices by Student': 'Opções de atividade por aluno'
+'Activity Enrolment Summary': 'Resumo de Inscrição da Atividade'
+'Activity Spread by Roll Group': 'Atividade por Grupo de Inscrição'
+'Activity Type by Roll Group': 'Tipo de Atividade por grupo de Lista'
+'Participants by Activity': 'Participantes por atividade'
+'Module Menu': 'Menu de Módulos'
+View: Visualizar
+Free: Free
+Activity: Atividade
+Provider: Provedor
+Terms: 'Períodos Letivos'
+Years: Anos
+Cost: Custo
+Actions: Ações
+'There are no records to display.': 'Não há registros para mostrar.'
+'Records {start}-{end} of {total}': 'Records {start}-{end} of {total}'
+'First Page': 'Primeira Página'
+'Previous Page': 'Previous Page'
+'Next Page': 'Next Page'
+'Last Page': 'Última Página'
+'Activity Type': 'Activity Type'
+'Cost ({paymentType})': 'Cost ({paymentType})'
+'Maximum Participants': 'Máximo de participantes'
+Staff: Funcionários
+Description: Descrição
+'Time Slots': 'Intervalos de tempo'
+Day: Dia
+'Start Time': 'Hora Inicial'
+'Finish Time': 'Finish Time'
+Location: Localidade
+Participants: Participantes
+'Activity listing is currently closed.': 'A lista de atividades está fechada.'
+'Waiting List': 'Lista de espera'

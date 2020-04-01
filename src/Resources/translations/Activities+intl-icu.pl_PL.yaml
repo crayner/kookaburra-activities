@@ -1,0 +1,46 @@
+Activities: 'Aktywności/Zajęcia dodatkowe'
+'My Activities': 'Moje aktywności/zajęcia dodatkowe'
+'View Activities': 'Zobacz aktywności/zajęcia dodatkowe'
+Administration: Administracja
+'Generate Invoices': 'Generuj faktury'
+'Manage Activities': 'Zarządzaj zajęciami dodatkowymi'
+Attendance: Frekwencja
+'Attendance History by Activity': 'Historia obecności według aktywności'
+'Enter Activity Attendance': 'Wprowadź obecność na zajęciach dodatkowych'
+'Printable Attendance Sheet': 'Arkusz frekwencji do druku'
+Reports: Raporty
+'Activity Attendance by Date': 'Obecność na zajęciach dodatkowych według daty'
+'Activity Choices by Form Group': 'Activity Choices by Form Group'
+'Activity Choices by Student': 'Wybory aktywności według uczniów'
+'Activity Enrolment Summary': 'Podsumowanie rejestracji aktywności'
+'Activity Spread by Roll Group': 'Aktywność rozproszone według klas'
+'Activity Type by Roll Group': 'Typ aktywności według klas'
+'Participants by Activity': 'Uczestnicy według działania'
+'Module Menu': 'Menu modułu'
+View: Wyświetl
+Free: Free
+Activity: Czynność
+Provider: Dostawca
+Terms: Warunki
+Years: Lata
+Cost: Koszt
+Actions: Akcja
+'There are no records to display.': 'Brak zawartości do wyświetlenia.'
+'Records {start}-{end} of {total}': 'Records {start}-{end} of {total}'
+'First Page': 'First Page'
+'Previous Page': 'Previous Page'
+'Next Page': 'Next Page'
+'Last Page': 'Last Page'
+'Activity Type': 'Activity Type'
+'Cost ({paymentType})': 'Cost ({paymentType})'
+'Maximum Participants': 'Maksymalna liczba uczestników'
+Staff: Pracownicy
+Description: opis
+'Time Slots': 'Czas treningu'
+Day: Dzień
+'Start Time': 'Czas rozpoczęcia'
+'Finish Time': 'Finish Time'
+Location: lokalizacja
+Participants: Uczestnicy
+'Activity listing is currently closed.': 'Lista działań jest obecnie zamknięta.'
+'Waiting List': 'Lista oczekujących'

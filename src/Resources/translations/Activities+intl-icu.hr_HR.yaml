@@ -1,0 +1,46 @@
+Activities: Aktivnosti
+'My Activities': 'Moje aktivnosti'
+'View Activities': 'Pregled aktivnosti'
+Administration: Administracija
+'Generate Invoices': 'Stvori račune'
+'Manage Activities': 'Upravljanje aktivnostima'
+Attendance: Prisutnost
+'Attendance History by Activity': 'Povijesni podaci o prisutnosti po aktivnostima'
+'Enter Activity Attendance': 'Zabilježi prisutnost na aktivnosti'
+'Printable Attendance Sheet': 'Popis za bilježenje prisutnih za tisak'
+Reports: Izvještaji
+'Activity Attendance by Date': 'Prisutnost na aktivnosti po datumima'
+'Activity Choices by Form Group': 'Activity Choices by Form Group'
+'Activity Choices by Student': 'Odabir aktivnosti po studentu'
+'Activity Enrolment Summary': 'Sažetak upisa na aktivnosti'
+'Activity Spread by Roll Group': 'Aktivnosti po odjelu'
+'Activity Type by Roll Group': 'Vrsta aktivnosti po odjelu'
+'Participants by Activity': 'Sudionici po aktivnostima'
+'Module Menu': 'Modul izbornika'
+View: Prikaz
+Free: Free
+Activity: Aktivnost
+Provider: Pružatelj
+Terms: Termini
+Years: Godine
+Cost: Cijena
+Actions: Akcije
+'There are no records to display.': 'Nema zapisa za prikaz.'
+'Records {start}-{end} of {total}': 'Records {start}-{end} of {total}'
+'First Page': 'First Page'
+'Previous Page': 'Previous Page'
+'Next Page': 'Next Page'
+'Last Page': 'Last Page'
+'Activity Type': 'Activity Type'
+'Cost ({paymentType})': 'Cost ({paymentType})'
+'Maximum Participants': 'Najveći broj polaznika'
+Staff: 'Nastavno osoblje'
+Description: Opis
+'Time Slots': Termini
+Day: Dan
+'Start Time': Početak
+'Finish Time': 'Finish Time'
+Location: Lokacija
+Participants: Sudionici
+'Activity listing is currently closed.': 'Activity listing is currently closed.'
+'Waiting List': 'Lista čekanja'

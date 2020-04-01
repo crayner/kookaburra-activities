@@ -1,0 +1,46 @@
+Activities: Activities
+'My Activities': 'My Activities'
+'View Activities': 'View Activities'
+Administration: Administration
+'Generate Invoices': 'Generate Invoices'
+'Manage Activities': 'Manage Activities'
+Attendance: Attendance
+'Attendance History by Activity': 'Attendance History by Activity'
+'Enter Activity Attendance': 'Enter Activity Attendance'
+'Printable Attendance Sheet': 'Printable Attendance Sheet'
+Reports: Reports
+'Activity Attendance by Date': 'Activity Attendance by Date'
+'Activity Choices by Form Group': 'Activity Choices by Form Group'
+'Activity Choices by Student': 'Activity Choices by Student'
+'Activity Enrolment Summary': 'Activity Enrolment Summary'
+'Activity Spread by Roll Group': 'Activity Spread by Roll Group'
+'Activity Type by Roll Group': 'Activity Type by Roll Group'
+'Participants by Activity': 'Participants by Activity'
+'Module Menu': 'Module Menu'
+View: View
+Free: Free
+Activity: Activity
+Provider: Provider
+Terms: Terms
+Years: Years
+Cost: Cost
+Actions: Actions
+'There are no records to display.': 'There are no records to display.'
+'Records {start}-{end} of {total}': 'Records {start}-{end} of {total}'
+'First Page': 'First Page'
+'Previous Page': 'Previous Page'
+'Next Page': 'Next Page'
+'Last Page': 'Last Page'
+'Activity Type': 'Activity Type'
+'Cost ({paymentType})': 'Cost ({paymentType})'
+'Maximum Participants': 'Maximum Participants'
+Staff: Staff
+Description: Description
+'Time Slots': 'Time Slots'
+Day: Day
+'Start Time': 'Start Time'
+'Finish Time': 'Finish Time'
+Location: Location
+Participants: Participants
+'Activity listing is currently closed.': 'Activity listing is currently closed.'
+'Waiting List': 'Waiting List'

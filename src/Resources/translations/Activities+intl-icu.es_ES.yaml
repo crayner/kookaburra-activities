@@ -1,0 +1,46 @@
+Activities: Extraprogramáticos
+'My Activities': 'Mis Extraprogramáticos'
+'View Activities': 'Ver Extraprogramáticos'
+Administration: Administración
+'Generate Invoices': 'Generar Comprobantes'
+'Manage Activities': 'Gestionar Extraprogramáticos'
+Attendance: Asistencia
+'Attendance History by Activity': 'Historial de Asistencia por Extraprogramático'
+'Enter Activity Attendance': 'Ingresar Asistencia de Extraprogramático'
+'Printable Attendance Sheet': 'Hoja de Asistencia Imprimible'
+Reports: Informes
+'Activity Attendance by Date': 'Asistencia a Actividades Extraprogramáticas por Fecha'
+'Activity Choices by Form Group': 'Activity Choices by Form Group'
+'Activity Choices by Student': 'Elecciones de Extraprogramáticos por Estudiante'
+'Activity Enrolment Summary': 'Resumen de Inscripción de Extraprogramáticos'
+'Activity Spread by Roll Group': 'Propagación de Extraprogramáticos por Curso'
+'Activity Type by Roll Group': 'Tipo de Extraprogramático por Curso'
+'Participants by Activity': 'Participantes por Extraprogramático'
+'Module Menu': 'Menu de Módulos'
+View: Ver
+Free: Free
+Activity: Extraprogramático
+Provider: Proveedor
+Terms: Períodos
+Years: Años
+Cost: Costo
+Actions: Acciones
+'There are no records to display.': 'No hay registros para mostrar.'
+'Records {start}-{end} of {total}': 'Records {start}-{end} of {total}'
+'First Page': 'Primera página'
+'Previous Page': 'Previous Page'
+'Next Page': 'Next Page'
+'Last Page': 'Última página'
+'Activity Type': 'Activity Type'
+'Cost ({paymentType})': 'Cost ({paymentType})'
+'Maximum Participants': 'Máximo de Participantes'
+Staff: Personal
+Description: Descripción
+'Time Slots': Módulos
+Day: Día
+'Start Time': 'Hora de inicio'
+'Finish Time': 'Finish Time'
+Location: Ubicación
+Participants: Participantes
+'Activity listing is currently closed.': 'La oferta de extraprogramáticos está actualmente cerrada.'
+'Waiting List': 'Lista de Espera'

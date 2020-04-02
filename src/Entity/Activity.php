@@ -13,7 +13,7 @@
 
 namespace Kookaburra\Activities\Entity;
 
-use App\Entity\Setting;
+use Kookaburra\SystemAdmin\Entity\Setting;
 use App\Manager\EntityInterface;
 use App\Manager\Traits\BooleanList;
 use App\Provider\ProviderFactory;

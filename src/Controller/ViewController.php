@@ -15,7 +15,7 @@
 
 namespace Kookaburra\Activities\Controller;
 
-use App\Entity\Setting;
+use Kookaburra\SystemAdmin\Entity\Setting;
 use App\Provider\ProviderFactory;
 use Kookaburra\Activities\Entity\Activity;
 use Kookaburra\Activities\Pagination\ActivityPagination;

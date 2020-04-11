@@ -22,12 +22,12 @@ CREATE TABLE `__prefix__Activity` (
     KEY `AcademicYear` (`academic_year`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 CREATE TABLE `__prefix__ActivityAttendance` (
-    `id` int(10) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT,
+    `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
     `attendance` longtext COLLATE utf8_unicode_ci NOT NULL,
     `date` date DEFAULT NULL,
     `timestamp_taken` datetime NOT NULL COMMENT '(DC2Type:date_immutable)',
-    `activity` int(8) UNSIGNED ZEROFILL DEFAULT NULL,
-    `person_taker` int(10) UNSIGNED ZEROFILL DEFAULT NULL,
+    `activity` int(8) UNSIGNED DEFAULT NULL,
+    `person_taker` int(10) UNSIGNED DEFAULT NULL,
     PRIMARY KEY (`id`),
     KEY `activity` (`activity`) USING BTREE,
     KEY `personTaker` (`person_taker`) USING BTREE

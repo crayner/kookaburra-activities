@@ -29,12 +29,11 @@ module:
             categoryPermissionStudent: 'Y'
             categoryPermissionParent: 'Y'
             categoryPermissionOther: 'Y'
-            permissions:
+            roles:
                 - Administrator
                 - Parent
                 - 'Support Staff'
                 - Teacher
-                - Librarian
         'View Activities_studentRegister':
             name: 'View Activities_studentRegister'
             precedence: 1
@@ -53,7 +52,7 @@ module:
             categoryPermissionStudent: 'Y'
             categoryPermissionParent: 'N'
             categoryPermissionOther: 'N'
-            permissions:
+            roles:
                 - Student
         'Manage Activities':
             name: 'Manage Activities'
@@ -73,7 +72,7 @@ module:
             categoryPermissionStudent: 'N'
             categoryPermissionParent: 'N'
             categoryPermissionOther: 'N'
-            permissions:
+            roles:
                 - Administrator
         'My Activities':
             name: 'My Activities'
@@ -93,7 +92,7 @@ module:
             categoryPermissionStudent: 'Y'
             categoryPermissionParent: 'Y'
             categoryPermissionOther: 'Y'
-            permissions:
+            roles:
                 - Administrator
                 - Student
                 - Teacher
@@ -115,11 +114,10 @@ module:
             categoryPermissionStudent: 'Y'
             categoryPermissionParent: 'Y'
             categoryPermissionOther: 'Y'
-            permissions:
+            roles:
                 - Administrator
                 - 'Support Staff'
                 - Teacher
-                - Librarian
         'Attendance History by Activity':
             name: 'Attendance History by Activity'
             precedence: 0
@@ -138,11 +136,10 @@ module:
             categoryPermissionStudent: 'Y'
             categoryPermissionParent: 'Y'
             categoryPermissionOther: 'Y'
-            permissions:
+            roles:
                 - Administrator
                 - 'Support Staff'
                 - Teacher
-                - Librarian
         'Generate Invoices':
             name: 'Generate Invoices'
             precedence: 0
@@ -161,10 +158,9 @@ module:
             categoryPermissionStudent: 'Y'
             categoryPermissionParent: 'Y'
             categoryPermissionOther: 'Y'
-            permissions:
+            roles:
                 - Administrator
                 - 'Support Staff'
-                - Librarian
         'Activity Type by Roll Group':
             name: 'Activity Type by Roll Group'
             precedence: 0
@@ -183,11 +179,10 @@ module:
             categoryPermissionStudent: 'N'
             categoryPermissionParent: 'N'
             categoryPermissionOther: 'N'
-            permissions:
+            roles:
                 - Administrator
                 - 'Support Staff'
                 - Teacher
-                - Librarian
         'Activity Spread by Roll Group':
             name: 'Activity Spread by Roll Group'
             precedence: 0
@@ -206,11 +201,10 @@ module:
             categoryPermissionStudent: 'N'
             categoryPermissionParent: 'N'
             categoryPermissionOther: 'N'
-            permissions:
+            roles:
                 - Administrator
                 - 'Support Staff'
                 - Teacher
-                - Librarian
         'Activity Choices by Student':
             name: 'Activity Choices by Student'
             precedence: 1
@@ -229,11 +223,10 @@ module:
             categoryPermissionStudent: 'N'
             categoryPermissionParent: 'N'
             categoryPermissionOther: 'N'
-            permissions:
+            roles:
                 - Administrator
                 - 'Support Staff'
                 - Teacher
-                - Librarian
         'Activity Enrolment Summary':
             name: 'Activity Enrolment Summary'
             precedence: 0
@@ -252,7 +245,7 @@ module:
             categoryPermissionStudent: 'N'
             categoryPermissionParent: 'N'
             categoryPermissionOther: 'N'
-            permissions:
+            roles:
                 - Administrator
                 - Teacher
         'View Activities_studentRegisterByParent':
@@ -291,7 +284,7 @@ module:
             categoryPermissionStudent: 'N'
             categoryPermissionParent: 'N'
             categoryPermissionOther: 'N'
-            permissions:
+            roles:
                 - Administrator
                 - Teacher
         'Printable Attendance Sheet':
@@ -312,7 +305,7 @@ module:
             categoryPermissionStudent: 'N'
             categoryPermissionParent: 'N'
             categoryPermissionOther: 'N'
-            permissions:
+            roles:
                 - Administrator
                 - Teacher
         'My Activities_viewEditEnrolment':
@@ -333,7 +326,7 @@ module:
             categoryPermissionStudent: 'N'
             categoryPermissionParent: 'N'
             categoryPermissionOther: 'N'
-            permissions:
+            roles:
                 - Administrator
         'Enter Activity Attendance_leader':
             name: 'Enter Activity Attendance_leader'
@@ -353,7 +346,7 @@ module:
             categoryPermissionStudent: 'Y'
             categoryPermissionParent: 'N'
             categoryPermissionOther: 'N'
-            permissions:
+            roles:
                 - Administrator
                 - Teacher
         'Activity Attendance by Date':
@@ -374,7 +367,7 @@ module:
             categoryPermissionStudent: 'N'
             categoryPermissionParent: 'N'
             categoryPermissionOther: 'N'
-            permissions:
+            roles:
                 - Administrator
                 - Teacher
         'Activity Choices by Roll Group':
@@ -395,6 +388,6 @@ module:
             categoryPermissionStudent: 'N'
             categoryPermissionParent: 'N'
             categoryPermissionOther: 'N'
-            permissions:
+            roles:
                 - Administrator
                 - Teacher
